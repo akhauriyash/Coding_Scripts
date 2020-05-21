@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # $1 --> Docker Tag Name and Password
+# *NEEDS* you to give argument for the docker tag name.
 
 DOCKER_GID=$(id -g)
 DOCKER_GNAME=$(id -gn)
@@ -49,6 +50,13 @@ docker build --tag=$DOCKER_TAG \
 
 n=$((n-1))
 # Launch container with current directory mounted
+
+docrun = "docrun.sh"
+
+if [ -f $docrun ] ; then
+    rm $docrun
+fi
+
 touch docrun.sh
 echo "docker run --gpus all --name $DOCKER_NAME -it \\
 --shm-size 32G \\
@@ -61,3 +69,4 @@ while [ $i -le $n ]
 	done
 echo "$DOCKER_TAG bash\n" >> docrun.sh
 
+sh ./docrun.sh

@@ -55,7 +55,7 @@ ENV UNAME $UNAME
 
 COPY requirements.txt .
 RUN pip install --user -r requirements.txt
-RUN rm requirements.txt
+RUN pip install --user git+https://github.com/Xilinx/brevitas.git
 
 WORKDIR /home/$UNAME/repo
 
