@@ -1,0 +1,4 @@
+https://github.com/drimpossible/Deep-Expander-Networks.git
+https://github.com/pwlnk/cuda-neural-network/
+https://github.com/sneha0401/DeepLearningCUDA
+https://github.com/TAMU-VITA/Deep-K-Means-pytorch
